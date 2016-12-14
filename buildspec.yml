@@ -11,7 +11,6 @@ phases:
     commands:
       - echo Build started on `date`
       - aws cloudformation package --template-file template.yaml --output-template-file serverless-output.yaml --s3-bucket fredcons-codebuild-output
-      - aws cloudformation deploy --template-file serverless-output.yaml --stack-name aws-build-test --capabilities CAPABILITY_IAM 
   post_build:
     commands:
       - echo Build completed on `date`
